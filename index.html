@@ -32,7 +32,6 @@
     $.getJSON("./GeoJSON/AMeDASPoint.geoJSON", function(data) {
       L.geoJSON(data).addTo(map);
     });
-      
     L.geoJson(
       geojsonFeature, {
         onEachFeature: function(feature, layer){
