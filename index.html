@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AMeDAS_Map</title>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <style>
      html, body {
@@ -29,16 +29,9 @@
       attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル</a>"
     }).addTo(map);
 
-    $.getJSON("./GeoJSON/AMeDASPoint.geoJSON", function(data) {
-      L.geoJSON(data).addTo(map);
-    });
-    L.geoJson(
-      geojsonFeature, {
-        onEachFeature: function(feature, layer){
-          layer.bindPopup(feature.properties.AMeDAS_name);
-        }
-      }
-    ).addTo(map);
+    $.getJSON("GeoJSON/AMeDASPoint.geoJSON", function (data) {
+        L.geoJson(data).addTo(map);
+      });
 
 
     </script>
